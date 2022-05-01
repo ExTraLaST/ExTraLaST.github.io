@@ -1,31 +1,61 @@
-<!--
-<h1>字体大小示例h1</h1>
-<h2>字体大小示例h2</h2>
-<h3>字体大小示例h3</h3>
-<h4>字体大小示例h4</h4>
-<h5>字体大小示例h5</h5>
-<h6>字体大小示例h6</h6>
-<h6 style="font-size:50px">字体大小示例50px</h6>
--->
-<h4>Test</h4>
-<p>段落</p>
-<!--ul  无序列表
-	ol  有序列表
--->
-<ol>a
-	<li>aa</li>
-	<li>ab</li>
-	<li>ac</li>
-</ol>
-<ol>
-	b
-</ol>
-<ul>
-	<li>ca</li>
-	<li>cb</li>
-	<li>cc</li>
-</ul>
-<!--<a href="url">name</a>  超链接-->
-<a href="test2.html">test2</a>
-<!--<img src=".jpg" alt="图片加载失败">  图片-->
-<img src="static/pictures/miku.jpg" alt="图片加载失败">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="zh-cn" />
+		<style>
+			body{
+				background-color:lightblue;
+			}
+			h1{
+				text-align:center;
+			}
+			p{
+				
+			}
+		</style>
+	</head>
+
+	<body background="static/pictures/background.jpg">
+		<h1><a name="head">This is<br />Heading</h1>
+		<hr />
+		<p>
+			<a href="#2t2">跳转到test2链接</a><br />
+			<a href="#mail">跳转到mail</a><br />
+		</p>
+		<!--  style="text-align:center" -->
+		<p>
+			<img src="static/pictures/miku.jpg" 
+				width="408"
+				height="256" 
+				alt="图片显示失败!"
+				align="left">
+		</p>
+		<div style="background-color:#00CCFF;width:408">
+			<p>
+				<a name="2t2" href="test2.html" 
+					style="font-family:
+							verdana;
+							color:blue;
+							font-size:30px;
+							text-decoration:none">
+				这是通往test2的链接
+				</a>
+			</p>
+			<p>
+				<a name="mail" 
+					href="mailto:rysebrad@outlook.com?subject=Hello%20again">	
+					向rysebrad发送邮件
+				</a>
+			</p>
+			<p>
+				<a href="https://github.com/ExTraLaST/ExTraLaST.github.io"
+					target="_top">
+				前往我的Github首页
+				</a>
+			</p>
+			<p>
+				<a href="#head">回到顶部</a><br />
+			</p>
+		</div>
+	</body>
+</html>
