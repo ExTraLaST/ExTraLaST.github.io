@@ -1,482 +1,410 @@
-<!DOCTYPE html>
-<html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
-  <title>ExTraLaST的个人空间</title>
-  <meta name="description" content="ExTraLaST的个人空间，期待与更多的人相遇！">
-  <meta name="keywords" content="ExTraLaST">
-  <link rel="apple-touch-icon-precomposed" href="images/avatar.bab2b7d4.jpeg">
-  <link rel="stylesheet" type="text/css" href="css/h.9c69ed6c.css">
-  <link rel="stylesheet" type="text/css" href="css/nekotora.99cf6f8c.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137340638-1"></script>
-  <script>
-   function a() {
-    dataLayer.push(arguments)
-   }
-   window.dataLayer = window.dataLayer || [], a("js", new Date), a("config", "UA-137340638-1");
-  </script>
-  <script type="text/javascript">
-   function disp_alert() {
-    alert("查无此人！ε≡٩(๑>₃<)۶ 一心向学！")
-   }
-  </script>
- </head>
- <body>
-  <nav>
-   <a href="#main" class="active">Index</a> <a class="clip"></a>
-   <a href="">某某某</a>
-   <a href="">某某某</a>
-   <a href="">某某某</a>
-   <a class="clip"></a> <a href="#main">某某某</a>
-  </nav>
-
-  <body onContextMenu="alert('禁止查看源代码，您的行为已记录。'); return false"
-   NOOP="if (window.event != null && window.event.button == 2) alert ('Thanks...');">
-   <body data-phone-cc-input="1">
-    <body>
-     <link href="css/toastr.css" rel="stylesheet">
-     <link href="css/style.css" rel="stylesheet">
-     <link href="css/toastr.min.css" rel="stylesheet">
-     <script src="js/toastr.min.js"></script>
-     <style>
-      .toast-bottom-center {
-       position: absolute;
-       left: 30px;
-       right: 10px;
-       top: 20px;
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="喵呜小窝 — 链接与文件下载库" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%2300568c'/%3E%3Cpath d='M12 18.5c-3.2-1.9-5.5-4.2-5.5-6.7 0-1.6 1.2-2.8 2.7-2.8 1.1 0 2.2.7 2.8 1.7.6-1 1.7-1.7 2.8-1.7 1.5 0 2.7 1.2 2.7 2.8 0 2.5-2.3 4.8-5.5 6.7z' fill='%23cde5ff'/%3E%3C/svg%3E" />
+    <title>喵呜小窝</title>
+    <style>
+      /* ============ Material Design 3 tokens（蓝色种子色，呼应蓝发） ============ */
+      :root {
+        color-scheme: light;
+        --md-primary: #00568c;
+        --md-on-primary: #ffffff;
+        --md-primary-container: #cde5ff;
+        --md-on-primary-container: #001d32;
+        --md-secondary: #51606f;
+        --md-on-secondary: #ffffff;
+        --md-secondary-container: #d5e4f6;
+        --md-on-secondary-container: #0e1d2a;
+        --md-tertiary: #68587a;
+        --md-tertiary-container: #eedbff;
+        --md-on-tertiary-container: #231533;
+        --md-error: #ba1a1a;
+        --md-on-error: #ffffff;
+        --md-error-container: #ffdad6;
+        --md-on-error-container: #410002;
+        --md-background: #f7f9fc;
+        --md-surface: #f7f9fc;
+        --md-surface-dim: #d8dbe0;
+        --md-surface-container-lowest: #ffffff;
+        --md-surface-container-low: #f1f4f8;
+        --md-surface-container: #eceef3;
+        --md-surface-container-high: #e6e8ed;
+        --md-surface-container-highest: #e0e2e7;
+        --md-on-surface: #191c20;
+        --md-on-surface-variant: #42474e;
+        --md-outline: #72777f;
+        --md-outline-variant: #c2c7cf;
+        --md-inverse-surface: #2e3135;
+        --md-inverse-on-surface: #eff1f5;
+        --md-scrim: rgba(0, 0, 0, 0.4);
+        --hero-grad-a: #a8d4f5;
+        --hero-grad-b: #dceefc;
+        --hero-grad-c: #f6e3ec;
+        --blush: #f2a7bb;
+        --maid-ink: #23202a;
+        --sock-blue: #6aa9dc;
+        --paw-tint: rgba(0, 86, 140, 0.055);
+        --shape-xl: 28px;
+        --shape-lg: 20px;
+        --shape-md: 14px;
+        --shape-sm: 10px;
+        --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       }
-     </style>
-     <div class="background">
-      <canvas id="startrack"></canvas>
-      <div class="cover"></div>
-     </div>
-     <div class="main">
-      <div class="ch intro">
-       <div class="container">
-        <div class="hello">
-         <h1 id="slogan">思考中...</h1>
-         <h2>
-          <div class="circle"> <span></span> <span></span>
-           <span></span>
-          </div>ExTraLaST的个人空间
-         </h2>
-        </div>
-       </div>
-      </div>
-      <div class="ch about">
-       <div class="container">
-        <h2 class="chtitle">Who is <span>ExTraLaST</span>？</h2>
-        <div class="clear">
-         <div class="introduct">
-          <img class="avatar" src="images/avatar.png">
-          <P>坚硬的代替了那些柔软的，清晰的取代了那些模糊的。那些滑溜溜和黏糊糊的东西，带你来到了世界的角落。</p>
-          <p style="padding-bottom:1em;">How lucky to meet you!</p>
-          <p>你好，这里是ExTraLaST空间 <sup>King</sup>
-           ，对有趣的世界和可能有趣的你感到好奇，热爱Tech和ACG文化。</p>
-          <p>希望能与你在比特之海的繁星之下相见！</p>
-          <div class="chatbox">
-           <div class="line loading"> <span></span>
-            <span></span> <span></span>
-           </div>
-          </div>
-         </div>
-         <ul class="skill clear">
-          <li>
-           <p>HTML5/CSS3</p>
-           <div class="progress">
-            <div style="width:68%;"></div>
-            <span>制作网站程度的能力</span>
-           </div>
-          </li>
-          <li>
-           <p>JavaScript/Typescript</p>
-           <div class="progress">
-            <div style="width:70%;"></div>
-            <span>使用现代轮子程度的能力</span>
-           </div>
-          </li>
-          <li>
-           <p>PHP</p>
-           <div class="progress">
-            <div style="width:80%;"></div>
-            <span>赞美最好的语言程度的能力</span>
-           </div>
-          </li>
-          <li>
-           <p>数字设计</p>
-           <div class="progress">
-            <div style="width:99%;">
-            </div><span>让自己舒服程度的能力</span>
-           </div>
-          </li>
-          <li>
-           <p>世界</p>
-           <div class="progress">
-            <div style="width:86%;"></div>
-            <span>观测世界程度的能力</span>
-           </div>
-          </li>
-          <li>
-           <p>搞事情</p>
-           <div class="progress">
-            <div style="width:82%;"></div>
-            <span>让事情发生程度的能力</span>
-           </div>
-          </li>
-          <li>
-           <p>魔法</p>
-           <div class="progress">
-            <div style="width:62%;"></div>
-            <span>区别于普通人的能力</span>
-           </div>
-          </li>
-          <li>
-           <p>MoePower</p>
-           <div class="progress">
-            <div style="width:9%;"></div>
-            <span>成为萌二程度的能力</span>
-           </div>
-          </li>
-         </ul>
-        </div>
-       </div>
-      </div>
-      <div class="find ch">
-       <div class="container links">
-        <h2 class="chtitle">ExTraLaST生活的<span>地方</span></h2>
-        <div class="clear col-3">
-         <a href="https://extralast.github.io/" target="_blank">
-          <div class="item">
-           <div class="bg" style="background-color:#28a9e0"></div>
-           <div class="inner"> <span>博客</span> </div>
-          </div>
-         </a>
-         <a href="https://github.com/extralast" target="_blank">
-          <div class="item">
-           <div class="bg" style="background-color:#28a9e0"></div>
-           <div class="inner"> <span>ExTraLaST</span> </div>
-          </div>
-         </a>
-         <a href="https://gitee.com/extralast" target="_blank">
-          <div class="item">
-           <div class="bg" style="background-color:#28a9e0"></div>
-           <div class="inner"> <span>gitee</span> </div>
-          </div>
-         </a>
-        </div>
-        <div class="clear">
-         <a href="http://"
-          target="_blank">
-          <div class="item">
-           <div class="bg" style="background-color:#28a9e0"></div>
-           <div class="inner"> <i class="icon-qq"></i>
-            <span>QQ</span>
-           </div>
-          </div>
-         </a>
-         <a href="http://"
-          target="_blank">
-          <div class="item">
-           <div class="bg" style="background-color:#28a9e0"></div>
-           <div class="inner"> <i class="icon-mail"></i>
-			<span>Mail</span> </div>
-          </div>
-         </a>
-         <a href="http://" target="_blank">
-          <div class="item">
-           <div class="bg" style="background-color:#e6162d"></div>
-           <div class="inner"> <i class="icon-weibo"></i>
-			<span>Weibo</span> </div>
-          </div>
-         </a>
-         <a href="http://" target="_blank">
-          <div class="item">
-           <div class="bg" style="background-color:#f9a2a8"></div>
-           <div class="inner"> <i class="icon-bilibili"></i>
-            <span>Bilibili</span>
-           </div>
-          </div>
-         </a>
-         <a href="http://" target="_blank">
-          <div class="item">
-           <div class="bg" style="background-color:#28a9e0"></div>
-           <div class="inner"> <i class="icon-twitter"></i>
-			<span>Twitter</span> </div>
-          </div>
-         </a>
-         <a href="http://" target="_blank">
-          <div class="item">
-           <div class="bg" style="background-color:#0f88eb"></div>
-           <div class="inner"> <i class="icon-zhihu"></i>
-            <span>知乎</span>
-           </div>
-          </div>
-         </a>
-         <a href="https://y.qq.com/n/ryqq/playlist/2736769053" target="_blank">
-          <div class="item">
-           <div class="bg" style="background-color:#f09199"></div>
-           <div class="inner"> <i class="icon-bookmark"></i>
-			<span>QQ音乐</span>
-           </div>
-          </div>
-         </a> <a href="https://music.163.com/#/user/home?id=605792271" target="_blank">
-          <div class="item">
-           <div class="bg" style="background-color:#f12d35"></div>
-           <div class="inner"> <i class="icon-netease_music"></i>
-            <span>网易云音乐</span>
-           </div>
-          </div>
-         </a>
-         <a href="https://github.com/extralast" target="_blank">
-          <div class="item">
-           <div class="bg" style="background-color:#353535"></div>
-           <div class="inner"> <i class="icon-github"></i> <span>Github</span> </div>
-          </div>
-         </a>
-         <a href="https://www.instagram.com/" target="_blank">
-          <div class="item">
-           <div class="bg" style="background-color:#b600ff"></div>
-           <div class="inner"> <i class="icon-instagram"></i> <span>Instgram</span>
-           </div>
-          </div>
-         </a>
-        </div>
-       </div>
-      </div>
-      <div class="gate ch">
-       <div class="container links">
-        <h2 class="chtitle">ExTraLaST的<span>邻居</span>们</h2>
-        <div class="clear"> <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/micooz.bab73e68.jpeg"> </div>
-           <div class="inner">
-            <h5>Micooz</h5>
-            <p>可爱的男孩子XD</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item akarin">
-           <div class="avatar"> <img src="images/lynn.a2e97198.jpeg"> </div>
-           <div class="inner">
-            <h5><span style="opacity:.3">毫无存在感</span>的凌</h5>
-            <p>可靠的魔法少年</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/totoro.28186699.jpeg"> </div>
-           <div class="inner">
-            <h5>卜卜口</h5>
-            <p>无处不在的美味卜卜</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/an.7db361fd.jpeg"> </div>
-           <div class="inner">
-            <h5>三千院の暗</h5>
-            <p>人生赢家小暗</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/sora.e0fce0ee.jpeg"> </div>
-           <div class="inner">
-            <h5>妹空</h5>
-            <p>草莓味的妹空酱</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/rakume.eb1a5fc1.jpeg"> </div>
-           <div class="inner">
-            <h5>Rakume</h5>
-            <p>消失在人群中的团长</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/almsev.2fa15777.jpeg"> </div>
-           <div class="inner">
-            <h5>Almsev</h5>
-            <p>消失的霖菓村村长</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/oott123.1f5d8fc3.jpeg"> </div>
-           <div class="inner">
-            <h5>Oott123</h5>
-            <p>三三菊苣</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/digua.51605f1e.jpeg"> </div>
-           <div class="inner">
-            <h5>地瓜</h5>
-            <p>烤的热乎乎的地瓜</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/ybusad.8c3014a7.jpeg"> </div>
-           <div class="inner">
-            <h5>孙天骁</h5>
-            <p>孙天骁的个人网站</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/cenegd.986634e6.jpeg"> </div>
-           <div class="inner">
-            <h5>亓一超</h5>
-            <p>cenegd</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/dante.223316a8.jpeg"> </div>
-           <div class="inner">
-            <h5>Dante</h5>
-            <p>cfan菊苣</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/starryvoid.04549413.jpeg"> </div>
-           <div class="inner">
-            <h5>Starryvoid</h5>
-            <p>繁星天</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/sylingd.eee1bccb.jpeg"> </div>
-           <div class="inner">
-            <h5>泷涯</h5>
-            <p>坠吼的膜法师</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/jipai.664f7e17.jpeg"> </div>
-           <div class="inner">
-            <h5>鸡排</h5>
-            <p>好次的鸡排</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/shellv.0d75f3b7.jpeg"> </div>
-           <div class="inner">
-            <h5>电磁泡ShellV</h5>
-            <p>泡！泡泡泡！</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/tcdw.7a6c64d6.jpeg"> </div>
-           <div class="inner">
-            <h5>吐槽大王</h5>
-            <p>好耶，是tcdw!</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/jackworks.9547e7e9.jpeg"> </div>
-           <div class="inner">
-            <h5>光棱</h5>
-            <p>JackWorks 暂时离开了</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/touka.3faff3bd.jpeg"> </div>
-           <div class="inner">
-            <h5>洛城东华</h5>
-            <p>世界另一端的无证网管</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/blingwang.39cdf894.jpeg"> </div>
-           <div class="inner">
-            <h5>派兹的小站</h5>
-            <p>银不了，尽梨了</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/kano.615da452.jpeg"> </div>
-           <div class="inner">
-            <h5>神楽坂の猫</h5>
-            <p>是卡諾和鵯凪，蹭蹭</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/yunyou.89774c37.jpeg"> </div>
-           <div class="inner">
-            <h5>云游君</h5>
-            <p>云游君的小站</p>
-           </div>
-          </div>
-         </a>
-         <a target="_blank" onclick="disp_alert()">
-          <div class="item">
-           <div class="avatar"> <img src="images/minamion.8803b164.jpeg"> </div>
-           <div class="inner">
-            <h5>神楽坂南音</h5>
-            <p>*好* 是南音</p>
-           </div>
-          </div>
-         </a>
-        </div>
-       </div> </a>
-      </div>
-     </div>
-     </div>
-     <div class="footer ch">
-      <div class="container">
-       <h3>ExTraLaST的个人空间</h3>
-       <p>寄言燕雀莫相唣，自有云霄万里高。</p>
-       <p class="c"><a href="http://">Say hello
-         to me @ </a></p>
-      </div>
-     </div>
-     </div>
-     <script src="js/page.3a0791a3.js"></script>
-     <script type="text/javascript" src="js/stats.js" charset="UTF-8">
-     </script>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color-scheme: dark;
+          --md-primary: #96ccff;
+          --md-on-primary: #003353;
+          --md-primary-container: #004a75;
+          --md-on-primary-container: #cde5ff;
+          --md-secondary: #b9c8da;
+          --md-on-secondary: #243140;
+          --md-secondary-container: #3a4857;
+          --md-on-secondary-container: #d5e4f6;
+          --md-tertiary: #d3bfe8;
+          --md-tertiary-container: #4f4061;
+          --md-on-tertiary-container: #eedbff;
+          --md-error: #ffb4ab;
+          --md-on-error: #690005;
+          --md-error-container: #93000a;
+          --md-on-error-container: #ffdad6;
+          --md-background: #101418;
+          --md-surface: #101418;
+          --md-surface-dim: #101418;
+          --md-surface-container-lowest: #0b0e12;
+          --md-surface-container-low: #191c20;
+          --md-surface-container: #1d2024;
+          --md-surface-container-high: #272a2f;
+          --md-surface-container-highest: #32353a;
+          --md-on-surface: #e1e2e7;
+          --md-on-surface-variant: #c2c7cf;
+          --md-outline: #8c9199;
+          --md-outline-variant: #42474e;
+          --md-inverse-surface: #e1e2e7;
+          --md-inverse-on-surface: #2e3135;
+          --md-scrim: rgba(0, 0, 0, 0.6);
+          --hero-grad-a: #123a5c;
+          --hero-grad-b: #17324d;
+          --hero-grad-c: #33222e;
+          --blush: #c97f95;
+          --maid-ink: #e8e4ee;
+          --sock-blue: #4a7fb0;
+          --paw-tint: rgba(150, 204, 255, 0.06);
+        }
+      }
 
-     <audio autoplay>
-      <source src="http://music.163.com/song/media/outer/url?id=1859245776.mp3" type="audio/mpeg">
-     </audio>
+      * { box-sizing: border-box; }
+      [hidden] { display: none !important; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        font-family: var(--font);
+        background-color: var(--md-background);
+        background-image:
+          radial-gradient(circle at 18% 22%, var(--paw-tint) 0 26px, transparent 27px),
+          radial-gradient(circle at 84% 64%, var(--paw-tint) 0 34px, transparent 35px),
+          radial-gradient(circle at 62% 10%, var(--paw-tint) 0 18px, transparent 19px);
+        background-size: 340px 340px, 420px 420px, 260px 260px;
+        color: var(--md-on-surface);
+        line-height: 1.55;
+      }
+      button, [role="button"], select, summary,
+      input:not([type="checkbox"], [type="radio"]) { min-height: 2.25rem; }
+      button { font-family: inherit; cursor: pointer; }
+      a { color: var(--md-primary); }
+      :focus-visible { outline: 2px solid var(--md-primary); outline-offset: 2px; border-radius: 6px; }
+      svg.ic { width: 24px; height: 24px; flex: none; fill: currentColor; display: block; }
+      svg.ic.sm { width: 20px; height: 20px; }
+      svg.ic.lg { width: 28px; height: 28px; }
 
-    </body>
-</html>
+      .page { max-width: 1024px; margin: 0 auto; padding: 20px 16px 56px; }
+
+      /* ============ Hero：角色小窝封面（不是个人资料卡） ============ */
+      .hero {
+        position: relative;
+        border-radius: 36px;
+        background: linear-gradient(135deg, var(--hero-grad-a), var(--hero-grad-b) 52%, var(--hero-grad-c));
+        padding: 30px 28px 0;
+        display: flex; flex-direction: column; align-items: center;
+        text-align: center;
+        overflow: hidden;
+      }
+      .hero-paw {
+        position: absolute; color: var(--md-primary);
+        opacity: 0.14; pointer-events: none;
+      }
+      .hero-paw svg { display: block; fill: currentColor; }
+      .hero-paw.p1 { top: 22px; left: 26px; transform: rotate(-18deg); }
+      .hero-paw.p2 { top: 64px; right: 30px; transform: rotate(22deg); }
+      .hero-paw.p3 { bottom: 44px; left: 9%; transform: rotate(12deg); }
+      .hero-paw.p4 { bottom: 58px; right: 8%; transform: rotate(-24deg); }
+      .hero-avatar {
+        width: min(340px, 84vw); height: auto; flex: none;
+        aspect-ratio: 1522 / 2048;
+        border-radius: 170px 170px 28px 28px;
+        object-fit: cover; object-position: center center;
+        border: 4px solid var(--md-surface-container-lowest);
+        box-shadow: 0 12px 30px rgba(0, 40, 70, 0.22);
+        background: var(--md-primary-container);
+      }
+      .hero-text { min-width: 0; margin-top: 16px; }
+      .hero-name {
+        margin: 0; font-size: 2.5rem; font-weight: 800;
+        letter-spacing: 0.14em; line-height: 1.15;
+        font-family: "Yuanti SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      }
+      .hero-name .paw-inline { display: inline-block; vertical-align: -0.08em; margin-left: 0.12em; color: var(--blush); }
+      .hero-name .paw-inline svg { width: 0.62em; height: 0.62em; display: block; fill: currentColor; }
+      .hero-place { margin: 6px 0 0; font-size: 0.95rem; letter-spacing: 0.42em; text-indent: 0.42em; color: var(--md-on-surface-variant); font-weight: 600; }
+      .hero-stripe {
+        margin-top: 20px; width: 100%; height: 16px;
+        background: repeating-linear-gradient(90deg, var(--sock-blue) 0 22px, #ffffff 22px 44px);
+        opacity: 0.9;
+      }
+      @media (prefers-color-scheme: dark) {
+        .hero-stripe { background: repeating-linear-gradient(90deg, var(--sock-blue) 0 22px, #dbe7f2 22px 44px); }
+      }
+
+      /* ============ Sections ============ */
+      section { margin-top: 36px; }
+      .sec-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+      .sec-head h2 {
+        margin: 0; font-size: 1.12rem; font-weight: 700; letter-spacing: 0.04em;
+        display: inline-flex; align-items: center; gap: 8px;
+        background: var(--md-primary-container); color: var(--md-on-primary-container);
+        padding: 7px 16px 7px 12px; border-radius: 999px 999px 999px 6px;
+      }
+      .sec-head h2 svg.ic { width: 20px; height: 20px; }
+      .sec-head .spacer { flex: 1; }
+      .sec-desc { margin: 0 0 14px; color: var(--md-on-surface-variant); font-size: 0.88rem; }
+
+      /* MD3 buttons */
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+        min-height: 40px; padding: 8px 18px;
+        border-radius: 999px; border: none;
+        font-size: 0.9rem; font-weight: 600; text-decoration: none;
+        transition: background 0.15s ease, box-shadow 0.15s ease;
+      }
+      .btn svg.ic { width: 19px; height: 19px; }
+      .btn-filled { background: var(--md-primary); color: var(--md-on-primary); }
+      .btn-filled:hover { box-shadow: 0 2px 8px rgba(0, 40, 70, 0.3); }
+      .btn-tonal { background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
+      .btn-tonal:hover { box-shadow: 0 1px 5px rgba(0, 40, 70, 0.2); }
+      .btn-outlined { background: transparent; color: var(--md-primary); border: 1px solid var(--md-outline); }
+      .btn-outlined:hover { background: var(--md-primary-container); }
+      .btn-text { background: transparent; color: var(--md-primary); padding: 8px 12px; }
+      .btn-text:hover { background: var(--md-primary-container); }
+      .btn[disabled] { opacity: 0.45; pointer-events: none; }
+      .icon-btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 40px; height: 40px; min-height: 40px; border-radius: 999px;
+        border: none; background: transparent; color: var(--md-on-surface-variant);
+      }
+      .icon-btn:hover { background: var(--md-surface-container-high); color: var(--md-on-surface); }
+      .icon-btn svg.ic { width: 21px; height: 21px; }
+
+      /* ============ Link cards ============ */
+      .link-grid {
+        display: grid; gap: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      }
+      .link-card {
+        position: relative;
+        display: flex; align-items: center; gap: 12px;
+        padding: 14px 16px; min-height: 76px;
+        border-radius: var(--shape-lg);
+        background: var(--md-surface-container-low);
+        color: var(--md-on-surface); text-decoration: none;
+        border: 1px solid transparent;
+        transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+      }
+      a.link-card:hover { background: var(--md-surface-container); box-shadow: 0 3px 10px rgba(15, 40, 60, 0.12); transform: translateY(-1px); }
+      .link-tile {
+        width: 46px; height: 46px; flex: none;
+        border-radius: 14px;
+        background: var(--md-primary-container); color: var(--md-on-primary-container);
+        display: flex; align-items: center; justify-content: center;
+      }
+      .link-meta { min-width: 0; flex: 1; }
+      .link-name { font-weight: 600; font-size: 0.98rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .link-host { color: var(--md-on-surface-variant); font-size: 0.78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .badge-fixed {
+        position: absolute; top: 8px; right: 10px;
+        font-size: 0.66rem; font-weight: 600; letter-spacing: 0.04em;
+        color: var(--md-on-tertiary-container); background: var(--md-tertiary-container);
+        padding: 2px 7px; border-radius: 999px;
+      }
+      .badge-custom {
+        position: absolute; top: 8px; right: 10px;
+        font-size: 0.66rem; font-weight: 600; letter-spacing: 0.04em;
+        color: var(--md-on-secondary-container); background: var(--md-secondary-container);
+        padding: 2px 7px; border-radius: 999px;
+      }
+      .card-tools { display: none; gap: 2px; flex: none; }
+      .managing .card-tools { display: flex; }
+      .managing .link-card { border-color: var(--md-outline-variant); border-style: dashed; }
+      .card-tools .icon-btn { width: 36px; height: 36px; min-height: 36px; background: var(--md-surface-container-highest); }
+      .card-tools .icon-btn svg.ic { width: 18px; height: 18px; }
+      .card-tools .icon-btn[disabled] { opacity: 0.35; pointer-events: none; }
+
+      .empty-box {
+        border: 1.5px dashed var(--md-outline-variant);
+        border-radius: var(--shape-lg);
+        padding: 28px 20px; text-align: center;
+        color: var(--md-on-surface-variant);
+        background: var(--md-surface-container-low);
+      }
+      .empty-box p { margin: 0 0 14px; }
+      .empty-box p:last-child { margin-bottom: 0; }
+
+      /* ============ File library ============ */
+      .files-card {
+        background: var(--md-surface-container-low);
+        border-radius: var(--shape-xl);
+        padding: 18px;
+      }
+      .crumbs { display: flex; align-items: center; flex-wrap: wrap; gap: 2px; margin-bottom: 10px; }
+      .crumb {
+        display: inline-flex; align-items: center; gap: 4px;
+        min-height: 36px; padding: 5px 10px; border-radius: 999px;
+        border: none; background: transparent; color: var(--md-primary);
+        font-size: 0.9rem; font-weight: 600; font-family: inherit;
+      }
+      .crumb:hover { background: var(--md-primary-container); }
+      .crumb.current { color: var(--md-on-surface); pointer-events: none; }
+      .crumb-sep { color: var(--md-outline); display: inline-flex; }
+      .crumb-sep svg.ic { width: 16px; height: 16px; }
+      .file-list { list-style: none; margin: 0; padding: 0; }
+      .file-row {
+        display: flex; align-items: center; gap: 13px;
+        padding: 10px 10px; border-radius: var(--shape-md);
+      }
+      .file-row + .file-row { border-top: 1px solid var(--md-outline-variant); }
+      .file-row:hover { background: var(--md-surface-container); }
+      .file-tile {
+        width: 42px; height: 42px; flex: none; border-radius: 12px;
+        display: flex; align-items: center; justify-content: center;
+        background: var(--md-secondary-container); color: var(--md-on-secondary-container);
+      }
+      .file-tile.is-file { background: var(--md-primary-container); color: var(--md-on-primary-container); }
+      .file-meta { flex: 1; min-width: 0; }
+      .file-name { font-weight: 550; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      button.file-name-btn {
+        background: none; border: none; padding: 0; min-height: 0;
+        font: inherit; font-weight: 550; color: inherit; text-align: left;
+        white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;
+      }
+      button.file-name-btn:hover { color: var(--md-primary); text-decoration: underline; }
+      .file-sub { color: var(--md-on-surface-variant); font-size: 0.78rem; }
+      .status-box { padding: 30px 16px; text-align: center; color: var(--md-on-surface-variant); }
+      .status-box p { margin: 0 0 14px; }
+      .status-box .btn { margin: 2px; }
+      .spinner {
+        width: 34px; height: 34px; margin: 0 auto 14px;
+        border-radius: 50%;
+        border: 4px solid var(--md-primary-container);
+        border-top-color: var(--md-primary);
+        animation: spin 0.9s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) {
+        .spinner { animation-duration: 2.4s; }
+        * { transition: none !important; }
+      }
+
+      /* ============ Dialog (MD3) ============ */
+      dialog {
+        border: none; padding: 0; max-width: min(520px, calc(100vw - 32px)); width: 100%;
+        border-radius: var(--shape-xl);
+        background: var(--md-surface-container-high);
+        color: var(--md-on-surface);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+      }
+      dialog::backdrop { background: var(--md-scrim); }
+      .dlg-body { padding: 24px; }
+      .dlg-body h3 { margin: 0 0 4px; font-size: 1.25rem; font-weight: 600; }
+      .dlg-sub { margin: 0 0 18px; color: var(--md-on-surface-variant); font-size: 0.88rem; }
+      .field { margin-bottom: 16px; }
+      .field label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--md-on-surface-variant); margin-bottom: 6px; }
+      .field input[type="text"], .field input[type="url"] {
+        width: 100%; min-height: 48px; padding: 10px 14px;
+        border-radius: var(--shape-sm);
+        border: 1px solid var(--md-outline);
+        background: var(--md-surface-container-lowest);
+        color: var(--md-on-surface);
+        font-size: 0.95rem; font-family: inherit;
+      }
+      .field input:focus { outline: 2px solid var(--md-primary); outline-offset: 0; border-color: var(--md-primary); }
+      .icon-picker { display: grid; grid-template-columns: repeat(auto-fill, minmax(52px, 1fr)); gap: 8px; }
+      .icon-opt {
+        display: flex; flex-direction: column; align-items: center; gap: 3px;
+        padding: 9px 2px 7px; min-height: 58px;
+        border-radius: var(--shape-md);
+        border: 1.5px solid var(--md-outline-variant);
+        background: var(--md-surface-container-lowest);
+        color: var(--md-on-surface-variant);
+        font-size: 0.66rem; font-family: inherit;
+      }
+      .icon-opt svg.ic { width: 22px; height: 22px; }
+      .icon-opt[aria-checked="true"] {
+        border-color: var(--md-primary);
+        background: var(--md-primary-container); color: var(--md-on-primary-container);
+        font-weight: 700;
+      }
+      .dlg-actions { display: flex; align-items: center; gap: 6px; margin-top: 20px; flex-wrap: wrap; }
+      .dlg-actions .spacer { flex: 1; }
+      .btn-danger-text { background: transparent; color: var(--md-error); padding: 8px 12px; }
+      .btn-danger-text:hover { background: var(--md-error-container); }
+
+      /* ============ Snackbar ============ */
+      .snackbar {
+        position: fixed; left: 50%; bottom: 22px; transform: translate(-50%, 90px);
+        z-index: 60; max-width: calc(100vw - 32px);
+        background: var(--md-inverse-surface); color: var(--md-inverse-on-surface);
+        padding: 12px 20px; border-radius: 10px;
+        font-size: 0.9rem; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        opacity: 0; pointer-events: none;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+      }
+      .snackbar.show { transform: translate(-50%, 0); opacity: 1; }
+
+      footer { margin-top: 44px; text-align: center; color: var(--md-on-surface-variant); font-size: 0.82rem; letter-spacing: 0.3em; text-indent: 0.3em; }
+      footer .foot-paw { display: inline-block; vertical-align: -0.15em; margin-right: 0.5em; color: var(--blush); }
+      footer .foot-paw svg { width: 15px; height: 15px; display: block; fill: currentColor; }
+
+      @media (max-width: 640px) {
+        .page { padding: 14px 12px 48px; }
+        .hero { padding: 24px 14px 0; border-radius: 28px; }
+        .hero-avatar { width: min(300px, 84vw); border-radius: 150px 150px 22px 22px; }
+        .hero-name { font-size: 2rem; }
+        .hero-paw.p3, .hero-paw.p4 { display: none; }
+        .link-grid { grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 10px; }
+        .files-card { padding: 12px; border-radius: var(--shape-lg); }
+        .dlg-body { padding: 20px 16px; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================================================================
+         ★★★  默认固定链接在这里改  ★★★
+         下面 DEFAULT_LINKS 里的链接会写死在这个文件里，
+         所有访客打开页面都看到同一套。
+         每条链接三个字段：
+           name —— 显示的名字
+           url  —— 跳转地址（带不带 https:// 都行）
+           icon —— 图标代号，从图标库里选一个填进来：
+                   link（链接） globe（地球） github（GitHub） blog（博客/笔）
+                   mail（邮件） chat（聊天） music（音乐） video（视频）
+                   book（书本） camera（相机） code（代码） folder（文件夹）
+                   star（星星） home（主页） rss（订阅） game（游戏）
+                   bag（购物袋） heart（爱心） cloud（云朵）
+         想加一条就照着格式多写一行，想删就整行删掉，改完重新上传本文件即可。
+         ================================================================ -->
+    <script>
+      var DEFAULT_LINKS = [
+        { name: "GitHub", url: "
